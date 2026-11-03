@@ -1,0 +1,111 @@
+[
+  {
+    "name": "accounts",
+    "description": "Аккаунты Apple: Apple ID, место в iCloud, не истёк ли вход",
+    "args": []
+  },
+  {
+    "name": "login",
+    "description": "Как войти в ещё один аккаунт Apple — передай владельцу tell_owner: пароль и код он вводит сам на странице плагина",
+    "args": []
+  },
+  {
+    "name": "login code",
+    "description": "Ввести код подтверждения Apple, который владелец прислал в чат (вход уже начат на странице плагина)",
+    "args": [
+      {
+        "name": "code",
+        "description": "6 цифр",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "login status",
+    "description": "Чем закончился вход: code (ждёт код), done, error, expired",
+    "args": []
+  },
+  {
+    "name": "logout",
+    "description": "Выйти из аккаунта Apple и убрать его подключения (файлы в iCloud не трогаются)",
+    "args": [
+      {
+        "name": "account",
+        "description": "Apple ID (один аккаунт — можно не указывать)"
+      }
+    ]
+  },
+  {
+    "name": "browse",
+    "description": "Папки iCloud Drive: в корне или внутри папки — чтобы выбрать, что подключить",
+    "args": [
+      {
+        "name": "account",
+        "description": "Apple ID (один аккаунт — можно не указывать)"
+      },
+      {
+        "name": "folder",
+        "description": "id папки из прошлого ответа; без него — корень iCloud Drive"
+      }
+    ]
+  },
+  {
+    "name": "mounts",
+    "description": "Подключения: папки в @icloud и откуда они",
+    "args": []
+  },
+  {
+    "name": "mount",
+    "description": "Подключить весь iCloud Drive или папку в нём",
+    "args": [
+      {
+        "name": "account",
+        "description": "Apple ID (один аккаунт — можно не указывать)"
+      },
+      {
+        "name": "folder",
+        "description": "id папки из browse"
+      },
+      {
+        "name": "path",
+        "description": "или путь папки внутри iCloud Drive: «Документы/Сканы»"
+      },
+      {
+        "name": "name",
+        "description": "имя папки в @icloud (по умолчанию — имя папки)"
+      }
+    ]
+  },
+  {
+    "name": "rename",
+    "description": "Переименовать подключение",
+    "args": [
+      {
+        "name": "name",
+        "description": "нынешнее имя",
+        "required": true
+      },
+      {
+        "name": "to",
+        "description": "новое имя",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "unmount",
+    "description": "Отключить подключение (файлы в iCloud не трогаются)",
+    "args": [
+      {
+        "name": "name",
+        "description": "имя подключения",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "check",
+    "description": "Проверить подключение: библиотека, доступ к Apple, аккаунты",
+    "args": []
+  }
+]

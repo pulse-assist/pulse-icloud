@@ -1,0 +1,43 @@
+{
+  "id": "icloud",
+  "name": "iCloud Drive",
+  "version": "0.1.0",
+  "pulse": ">=1.5",
+  "description": "iCloud Drive в «Файлах» и у агентов папкой @icloud: несколько аккаунтов Apple, весь Drive или папки в нём; вход по Apple ID и коду, пароль не хранится",
+  "permissions": [
+    "files:provide",
+    "signals:create",
+    "network"
+  ],
+  "runtime": {
+    "kind": "python",
+    "entry": "icloud_plugin.app:app",
+    "path": "backend",
+    "requirements": "backend/requirements.txt",
+    "health": "/health"
+  },
+  "files": {
+    "provider": {
+      "title": "iCloud Drive",
+      "icon": "bi-cloud",
+      "description": "Подключения плагина «iCloud Drive»: весь iCloud Drive аккаунта или папки в нём"
+    }
+  },
+  "ui": {
+    "dist": "ui"
+  },
+  "menu": [
+    {
+      "id": "main",
+      "title": "iCloud Drive",
+      "icon": "bi-cloud",
+      "page": "index.html"
+    }
+  ],
+  "skills": [
+    "skills/icloud.md"
+  ],
+  "commands": "commands.json",
+  "check": "check",
+  "install": "INSTALL.md"
+}
